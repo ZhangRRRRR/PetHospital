@@ -78,4 +78,13 @@
   get请求生成自我测试 并返回全部试题内容。
   /api/test/self 
   
+  api5:
+  post请求：
+  返回用户答题结果 记录
+  /api/test/result
+  {userID:,
+   score:
+   testType:
+   testId:
+  }
 ```
