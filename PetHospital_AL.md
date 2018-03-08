@@ -2,6 +2,17 @@
 --n-- : nodejs
 --p-- : python
 
+* 登陆 注册
+```
+ api1:
+ post请求 payload 用户密码
+  /api/signin
+  api2:
+  post请求 payload 用户信息
+  /api/register
+ 
+
+```
 
 * 医院导览展示
 ```
