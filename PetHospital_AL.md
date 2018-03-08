@@ -52,9 +52,24 @@
           视频:.....
         }
       }
-    }
-
+    }
+```
 * 测试
 ```
-
+  api1:
+  get请求某一项目的试题 从id开始
+  /api/test/:class/:id?
+  
+  api2:
+  get请求所有存在的考试
+  /api/test/
+  
+  api3:
+  get请求某一考试全部试题
+  /api/test/:id
+  
+  api4:
+  get请求生成自我测试 并返回全部试题内容。
+  /api/test/self 
+  
 ```
