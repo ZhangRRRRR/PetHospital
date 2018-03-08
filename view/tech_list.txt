@@ -1,0 +1,84 @@
+### 使用的包库汇总 ###
+* npm
+  axios //ajax异步传输
+  router //webpack架构自带
+  vue-video-player //播放视频
+### ajax 通过服务器接口获取json数据 ###
+```
+cnpm install axios -s
+
+config->index.js{
+  proxyTable: {
+    '/jsondemo': {
+      target: 'http://localhost:8000',
+      changeOrigin: true,
+      pathRewrite: {
+        '^/jsondemo': '/jsondemo'
+      }
+    }
+  },
+}
+
+.vue:{
+  import axios from 'axios'
+  Vue.prototype.$ajax = axios
+  get_json () {
+    this.$ajax.request({
+      url: '/jsondemo'
+    }).then(function (res) {
+      console.log(res.data)
+    }).catch(function (err) {
+      console.log(err)
+    })
+  }
+}
+
+* axios使用说明
+  https://www.kancloud.cn/yunye/axios/234845
+
+* 跨域问题CORS
+  https://www.zhihu.com/question/46202188
+  https://www.jianshu.com/p/1fd744512d83
+  https://www.jianshu.com/p/95b2caf7e0da //currently using this to resolve
+```
+
+### 传递参数问题 页面跳转问题 ###
+```
+* 数组更新不能反应问题
+  https://www.jianshu.com/p/9990226a892e
+
+* emit and on eventbus传递参数
+  https://www.jianshu.com/p/fde85549e3b0
+
+* djiango json数据传输
+  https://www.cnblogs.com/psklf/archive/2016/05/30/5542612.html
+
+* 使用router在页面跳转的时候传递参数
+  params方式传递: url中不可见但是会刷新后失效
+  this.$router.push({
+    name: 'VideoDemo',
+    params: {
+      passmessageString: 'wise choice'
+    }
+  })
+  this.$route.params.passmessageString
+  query方式传递: url中可见但是刷新后不会失效
+
+* 跳转到新的页面 在新的页面中ajax加载后显示
+  在mounted中加载
+  methods: {
+    get_json () {
+      this.$ajax.request({
+        url: '/jsondemo'
+      }).then(function (res) {
+        this.comm_test += res.data.status + ' ' + res.data.result
+      }.bind(this)).catch(function (err) {
+        console.log(err)
+      })
+    }
+  },
+  mounted () {
+    this.get_json()
+  }
+```
+### 本地视频播放 ###
