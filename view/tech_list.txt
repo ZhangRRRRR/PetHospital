@@ -82,3 +82,7 @@ config->index.js{
   }
 ```
 ### 本地视频播放 ###
+
+
+### 服务器可能遇到的问题 ###
+请求拒绝:https://www.cnblogs.com/meitian/p/7016336.html

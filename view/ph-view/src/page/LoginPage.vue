@@ -17,22 +17,25 @@ export default {
       password: ''
     }
   },
+  created () {
+    this.checkLogin()
+  },
   methods: {
     login () {
-      this.$api.post('jsondemo/login', {
+      this.$api.post('login', {
         username: this.username,
         password: this.password},
       r => {
         if (r.success === 'TRUE') {
           this.$api.setLoginStatus('LOGIN')
-          console.log('true')
+          // jump back to the page which was interrupted
           this.returnToFromPage()
         } else {
           this.$api.setLoginStatus('LOGOUT')
           this.responseMessage = '登陆失败, 请核对您的用户名和密码'
         }
       }, r => {
-        this.responseMessage = '网络问题请重试'
+        this.responseMessage = '网络连接异常请检查网络后重试'
       })
     },
     returnToFromPage () {
@@ -47,6 +50,14 @@ export default {
       this.$router.push({
         name: pageName
       })
+    },
+    checkLogin () {
+      var isAlreadyLogin = this.$api.checkLoginStatus()
+      if (isAlreadyLogin === true) {
+        this.jumpToPage('MainPage')
+      } else {
+        // do nothing
+      }
     }
   }
 }

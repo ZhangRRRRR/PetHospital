@@ -1,10 +1,17 @@
 <template>
   <div>
     <PHHeader></PHHeader>
-    <p>主页</p>
+    <p>医院导览</p>
     <p>{{ welcomeMessage }}</p>
+    <ul>
+      <li v-for= "department in departmentList" :key= "department.id">
+        <router-link :to="'/phguiding/' + department.id">
+            {{ department.name }}
+        </router-link>
+      </li>
+    </ul>
     <button v-on:click="logOut()">登出</button>
-    <button v-on:click="jumpToPage('PHGuidingPage')">医院导览</button>
+    <button v-on:click="jumpToPage('MainPage')">回到主页</button>
     <PHFooter></PHFooter>
   </div>
 </template>
@@ -16,13 +23,20 @@ export default {
   components: { PHHeader, PHFooter },
   data () {
     return {
-      welcomeMessage: ''
+      welcomeMessage: '',
+      departmentList: []
     }
   },
   created () {
     this.checkLogin()
+    this.getDepartmentList()
   },
   methods: {
+    getDepartmentList () {
+      this.$api.get('intros', null, r => {
+        this.departmentList = r.departments
+      })
+    },
     checkLogin () {
       var isAlreadyLogin = this.$api.checkLoginStatus()
       if (isAlreadyLogin === true) {
