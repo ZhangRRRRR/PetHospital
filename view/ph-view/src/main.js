@@ -4,6 +4,13 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+import './style/fonts/glyphicons-halflings-regular.eot'
+import './style/fonts/glyphicons-halflings-regular.svg'
+import './style/fonts/glyphicons-halflings-regular.ttf'
+import './style/fonts/glyphicons-halflings-regular.woff'
+import './style/fonts/glyphicons-halflings-regular.woff2'
+import './style/css/bootstrap.css'
+
 import api from './api/index.js'
 
 Vue.prototype.$api = api
