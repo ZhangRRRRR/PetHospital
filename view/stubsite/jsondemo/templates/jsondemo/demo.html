@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>json_display_test</title>
+</head>
+<body>
+<h1 id = "demo1"></h1>
+<h1 id = "demo2"></h1>
+<h1 id = "demo3"></h1>
+<script type="text/javascript">
+    var list = {{List|safe}}
+    document.getElementById("demo1").innerHTML = list[0]
+    document.getElementById("demo2").innerHTML = list[1]
+    document.getElementById("demo3").innerHTML = list[2]
+</script>
+</body>
+</html>
