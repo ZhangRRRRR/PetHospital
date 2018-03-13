@@ -1,20 +1,22 @@
 <template>
   <div>
-    <div class = "row">
-      <div class = "title_row">
-        <div class="col-md-10">
-          <div class="left_title_part">
-            <p class = "software_title">虚拟宠物医院</p>
+    <div class="container-fluid">
+      <div class = "row">
+        <div class = "title_row">
+          <div class="col-xs-9">
+            <div class="left_title_part">
+              <p class = "software_title">虚拟宠物医院</p>
+            </div>
           </div>
-        </div>
-        <div class="col-md-1">
-          <div class="middle_title_part">
-            <p class = "hello_title">欢迎, 新进干员</p>
+          <div class="col-xs-2">
+            <div class="middle_title_part">
+              <p class = "hello_title">欢迎, 新进干员</p>
+            </div>
           </div>
-        </div>
-        <div class="col-md-1">
-          <div class="right_title_part">
-            <img class = "header_img" src="../../static/img/header.jpg"/>
+          <div class="col-xs-1">
+            <div class="right_title_part">
+              <img class = "header_img" src="../../static/img/header.jpg"/>
+            </div>
           </div>
         </div>
       </div>
@@ -42,6 +44,7 @@
 }
 
 .middle_title_part{
+  margin-left: 70px;
   padding-top:35px;
 }
 .hello_title{

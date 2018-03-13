@@ -1,28 +1,30 @@
 <template>
   <div>
     <PHHeader></PHHeader>
-    <div class="row">
-      <div class="col-md-7">
-        <div class="login_ad_part">
-          <transition name="login_ad_top_trans">
-            <p v-if="showInput" class="login_ad_top">「磨炼您的技能, 帮助人类的伙伴」</p>
-          </transition>
-          <img class="login_ad" src = "../../static/img/login_ad_bg.gif"/>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-7">
+          <div class="login_ad_part">
+            <transition name="login_ad_top_trans">
+              <p v-if="showInput" class="login_ad_top">「磨炼您的技能, 帮助人类的伙伴」</p>
+            </transition>
+            <img class="login_ad" src = "../../static/img/login_ad_bg.gif"/>
+          </div>
         </div>
-      </div>
-      <div class="col-md-5">
-        <div class="login_part">
-          <p class="title">欢迎光临虚拟宠物医院</p>
-          <p>{{responseMessage}}</p>
-          <transition name="username_fadein">
-            <p v-if="showInput"><input class="inputbox_style" v-model="username" placeholder="用户名" type="text"/></p>
-          </transition>
-          <transition name="password_fadein">
-            <p v-if="showInput"><input class="inputbox_style" v-model="password" placeholder="密码" type="password"/></p>
-          </transition>
-          <transition name="button_style_trans">
-            <button v-if="showInput" class="button_style" v-on:click="login">登录</button>
-          </transition>
+        <div class="col-xs-5">
+          <div class="login_part">
+            <p class="title">欢迎光临虚拟宠物医院</p>
+            <p class="responseMessage_style">{{responseMessage}}</p>
+            <transition name="username_fadein">
+              <p v-if="showInput"><input class="inputbox_style" v-model="username" placeholder="用户名" type="text"/></p>
+            </transition>
+            <transition name="password_fadein">
+              <p v-if="showInput"><input class="inputbox_style" v-model="password" placeholder="密码" type="password"/></p>
+            </transition>
+            <transition name="button_style_trans">
+              <button v-if="showInput" class="button_style" v-on:click="login">登录</button>
+            </transition>
+          </div>
         </div>
       </div>
     </div>
@@ -121,6 +123,10 @@ export default {
   background-image: url('../../static/img/login_bg.gif');
   background-size: contain;
   background-repeat: no-repeat;
+}
+.responseMessage_style{
+  font-size: 10px;
+  color:red;
 }
 
 .title{

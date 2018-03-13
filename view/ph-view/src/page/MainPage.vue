@@ -1,8 +1,7 @@
 <template>
   <div>
     <PHHeader></PHHeader>
-    <p>主页</p>
-    <p>{{ welcomeMessage }}</p>
+    <p>您的学习的知识和技能将成为他们唯一的依靠</p>
     <button v-on:click="logOut()">登出</button>
     <button v-on:click="jumpToPage('PHGuidingPage')">医院导览</button>
     <PHFooter></PHFooter>
@@ -16,7 +15,6 @@ export default {
   components: { PHHeader, PHFooter },
   data () {
     return {
-      welcomeMessage: ''
     }
   },
   created () {
@@ -26,7 +24,7 @@ export default {
     checkLogin () {
       var isAlreadyLogin = this.$api.checkLoginStatus()
       if (isAlreadyLogin === true) {
-        this.welcomeMessage = '欢迎, 新进干员'
+        // do nothing
       } else {
         this.login()
       }
