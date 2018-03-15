@@ -8,6 +8,7 @@ import CaseLearningPage from '@/page/CaseLearningPage'
 import RolePlayPage from '@/page/RolePlayPage'
 import DutyLearningPage from '@/page/DutyLearningPage'
 import DeseaseSeriesDetail from '@/page/deseaseSeriesDetail'
+import RoleDetail from '@/page/RoleDetail'
 Vue.use(Router)
 
 export default new Router({
@@ -43,15 +44,20 @@ export default new Router({
       component: CaseLearningPage
     },
     {
+      // 病种
+      path: '/deseaseseries/:id',
+      name: 'DeseaseSeriesDetail',
+      component: DeseaseSeriesDetail
+    },
+    {
       path: '/roleplay',
       name: 'RolePlayPage',
       component: RolePlayPage
     },
     {
-      // 病种
-      path: '/deseaseseries/:id',
-      name: 'DeseaseSeriesDetail',
-      component: DeseaseSeriesDetail
+      path: '/role/:id',
+      name: 'RoleDetail',
+      component: RoleDetail
     }
   ]
 })
