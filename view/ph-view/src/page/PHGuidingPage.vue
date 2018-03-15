@@ -14,7 +14,8 @@
           <ul>
             <li v-for= "department in departmentList" :key= "department.id">
               <router-link :to="'/phguiding/' + department.id">
-                <p v-on:mouseenter="showRoomPosition(department.name)" v-on:mouseleave="hideRoomPosition()">{{ department.name }}</p>
+              <!-- v-on:mouseenter="showRoomPosition(department.name)" v-on:mouseleave="hideRoomPosition()" -->
+                <p class = "room_list_instance" v-on:mouseenter="showRoomPosition(department.name)" v-on:mouseleave="hideRoomPosition()">{{ department.name }}</p>
               </router-link>
             </li>
           </ul>
@@ -36,13 +37,13 @@ export default {
     return {
       departmentList: [],
       circlePosData: [
-        ['口腔科', '100x200'],
+        ['口腔科', '400x700'],
         ['皮肤科', '200x300'],
         ['肛门科', '300x100'],
         ['内分泌科', '400x500'],
         ['手术室', '200x800'],
         ['避孕室', '200x700'],
-        ['瞎JB室', '200x300']
+        ['瞎JB室', '100x500']
       ],
       imgVar: {},
       timer: {}
@@ -58,6 +59,7 @@ export default {
   },
   methods: {
     showRoomPosition (name) {
+      var circleImgVar = document.getElementById('circle_img')
       var pos = ''
       for (var i = 0; i !== this.circlePosData.length; i++) {
         if (this.circlePosData[i][0] === name) {
@@ -69,22 +71,43 @@ export default {
         var poses = pos.split('x')
         var left = poses[0]
         var top = poses[1]
-        this.imgVar.style.width = '0px'
-        this.imgVar.style.height = '0px'
+        // set absolute position
         this.imgVar.style.left = left + 'px'
         this.imgVar.style.top = top + 'px'
+        // set width and height and opacity
+        circleImgVar.width = 0
+        circleImgVar.height = 0
+        circleImgVar.style.opacity = 0
         this.imgVar.style.visibility = 'visible'
+
+        var widthHeightIncrementInterval = 5.0
+        var widthHeightMaxSize = 300.0
+        var loopTimes = widthHeightMaxSize / widthHeightIncrementInterval
+        var leftTopMoveInterval = widthHeightMaxSize / 2.0 / loopTimes
+        var opacityChangeInterval = 100.0 / loopTimes
+
         this.timer = setInterval(function () {
-          this.imgVar.style.width = this.imgVar.style.width + 10 + 'px'
-          this.imgVar.style.height = this.imgVar.style.height + 10 + 'px'
-          if (this.imgVar.style.width > 300) {
+          circleImgVar.width += widthHeightIncrementInterval
+          circleImgVar.height += widthHeightIncrementInterval
+          var currentLeft = parseInt(this.imgVar.style.left)
+          this.imgVar.style.left = (currentLeft - leftTopMoveInterval) + 'px'
+          var currentTop = parseInt(this.imgVar.style.top)
+          this.imgVar.style.top = (currentTop - leftTopMoveInterval) + 'px'
+          var currentOpacity = parseFloat(circleImgVar.style.opacity)
+          circleImgVar.style.opacity = currentOpacity + opacityChangeInterval
+          if (circleImgVar.width === widthHeightMaxSize) {
             clearInterval(this.timer)
           }
-        }, 30)
+        }.bind(this), 1) // do not change the time step here
       }
     },
     hideRoomPosition () {
+      clearInterval(this.timer)
       this.imgVar.style.visibility = 'hidden'
+      /*
+      setTimeout(() => {
+      }, 1000);
+      */
     },
     getDepartmentList () {
       this.$api.get('intros', null, r => {
