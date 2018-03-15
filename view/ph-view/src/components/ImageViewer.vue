@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-on:mouseenter="showCurrentPage()">
     <img v-bind:src="src">
     <p></p>
     <button v-on:click="previousPhoto()">previous</button>
@@ -20,15 +20,18 @@ export default {
     }
   },
   methods: {
+    showCurrentPage () {
+      this.src = this.urls[this.currentIndex].url
+    },
     nextPhoto () {
       this.urlLength = this.urls.length
       this.nextIndex()
-      this.src = this.urls[this.currentIndex].url
+      this.showCurrentPage()
     },
     previousPhoto () {
       this.urlLength = this.urls.length
       this.previousIndex()
-      this.src = this.urls[this.currentIndex].url
+      this.showCurrentPage()
     },
     nextIndex () {
       var length = this.urlLength

@@ -10,8 +10,11 @@ import './style/fonts/glyphicons-halflings-regular.ttf'
 import './style/fonts/glyphicons-halflings-regular.woff'
 import './style/fonts/glyphicons-halflings-regular.woff2'
 import './style/css/bootstrap.css'
+import VueVideoPlayer from 'vue-video-player'
+import 'video.js/dist/video-js.css'
 
 import api from './api/index.js'
+Vue.use(VueVideoPlayer)
 
 Vue.prototype.$api = api
 
