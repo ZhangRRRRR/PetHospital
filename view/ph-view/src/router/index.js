@@ -16,11 +16,6 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/Main',
-      name: 'MainPage',
-      component: MainPage
-    },
-    {
       path: '/',
       name: 'iMain',
       component: iMain,

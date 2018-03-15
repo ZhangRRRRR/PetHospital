@@ -1,14 +1,12 @@
 <template>
   <div>
-    <PHHeader></PHHeader>
     <p>正在浏览: {{ departmentData.departmentName }}</p>
     <p>{{ departmentData.position }}</p>
     <p>{{ departmentData.usage }}</p>
     <p>{{ departmentData.description }}</p>
     <button v-on:click="logOut()">登出</button>
     <button v-on:click="jumpToPage('PHGuidingPage')">查看其它科室</button>
-    <button v-on:click="jumpToPage('MainPage')">回到主页</button>
-    <PHFooter></PHFooter>
+    <button v-on:click="jumpToPage('WelcomePage')">回到主页</button>
   </div>
 </template>
 
@@ -46,7 +44,7 @@ export default {
       this.$router.push({
         name: 'LoginPage',
         params: {
-          jumpFromPage: 'MainPage'
+          jumpFromPage: 'WelcomePage'
         }
       })
     },
