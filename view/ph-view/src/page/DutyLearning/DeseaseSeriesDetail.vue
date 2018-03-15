@@ -14,12 +14,8 @@
 </template>
 
 <script>
-<<<<<<< HEAD:view/ph-view/src/page/DutyLearning/DeseaseSeriesDetail.vue
-import ImageViewer from '../../components/ImageViewer.vue'
-=======
 import ImageViewer from '../components/ImageViewer.vue'
 import VideoViewer from '../components/VideoViewer.vue'
->>>>>>> ae1c1d097c13dc747ec38b2a9763883cbae11700:view/ph-view/src/page/DeseaseSeriesDetail.vue
 export default {
   components: { ImageViewer, VideoViewer },
   data () {
