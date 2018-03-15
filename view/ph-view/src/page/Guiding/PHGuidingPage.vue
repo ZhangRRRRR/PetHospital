@@ -1,13 +1,13 @@
 <template>
   <div>
     <PHHeader></PHHeader>
-    <img id="circle_img" class="circle_img_style" src = "../../static/img/ph-guiding-circle.png"/>
+    <img id="circle_img" class="circle_img_style" src = "../../../static/img/ph-guiding-circle.png"/>
     <div class="row">
       <p>医院导览</p>
     </div>
     <div class="row">
       <div class="col-xs-8">
-        <img class="phguding_img_style" src = "../../static/img/phguiding_main.jpg"/>
+        <img class="phguding_img_style" src = "../../../static/img/phguiding_main.jpg"/>
       </div>
       <div class="col-xs-4">
         <div class="room_list_part">
@@ -29,8 +29,8 @@
 </template>
 
 <script>
-import PHHeader from '../components/PHHeader.vue'
-import PHFooter from '../components/PHFooter.vue'
+import PHHeader from '../../components/PHHeader.vue'
+import PHFooter from '../../components/PHFooter.vue'
 export default {
   components: { PHHeader, PHFooter },
   data () {
