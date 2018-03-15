@@ -5,6 +5,7 @@
     <button v-on:click="logOut()">登出</button>
     <button v-on:click="jumpToPage('PHGuidingPage')">医院导览</button>
     <button v-on:click="jumpToPage('DutyLearningPage')">职能学习</button>
+    <button v-on:click="jumpToPage('OnlineTestPage')">在线测试</button>
     <PHFooter></PHFooter>
   </div>
 </template>

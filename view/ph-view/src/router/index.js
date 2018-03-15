@@ -8,6 +8,7 @@ import CaseLearningPage from '@/page/CaseLearningPage'
 import RolePlayPage from '@/page/RolePlayPage'
 import DutyLearningPage from '@/page/DutyLearningPage'
 import DeseaseSeriesDetail from '@/page/deseaseSeriesDetail'
+import OnlineTestPage from '@/page/OnlineTestPage'
 Vue.use(Router)
 
 export default new Router({
@@ -52,6 +53,11 @@ export default new Router({
       path: '/deseaseseries/:id',
       name: 'DeseaseSeriesDetail',
       component: DeseaseSeriesDetail
+    },
+    {
+      path: '/onlinetest',
+      name: 'OnlineTestPage',
+      component: OnlineTestPage
     }
   ]
 })

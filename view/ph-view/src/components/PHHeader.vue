@@ -10,7 +10,9 @@
           </div>
           <div class="col-xs-2">
             <div class="middle_title_part">
-              <p class = "hello_title">欢迎, 新进干员</p>
+              <!--<p class = "hello_title">欢迎, 新进干员</p>-->
+              <button class="title_button" v-on:click="logOut()">登出</button>
+              <button class="title_button" v-on:click="jumpToPage('MainPage')">回到主页</button>
             </div>
           </div>
           <div class="col-xs-1">
@@ -31,6 +33,11 @@
   height:85px;
 }
 
+.title_button{
+  color:#fff;
+  background:#405685;
+  border-color:#405685;
+}
 .left_title_part{
   padding-top:20px;
   padding-left: 75px;
