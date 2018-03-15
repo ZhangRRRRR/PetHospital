@@ -6,7 +6,7 @@ urlpatterns = [
 
     path('api', views.json_display_demo, name='json_display_demo'),
 
-    path('api/<slug:key>', views.restful_demo, name='restful_demo'),
+    path('api/djfjkdjfjkd/<slug:key>', views.restful_demo, name='restful_demo'),
 
     path('api/1', views.json_display_demo_1, name='json_display_demo_1'),
 
