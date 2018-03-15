@@ -1,10 +1,10 @@
 <template>
   <div>
     <PHHeader></PHHeader>
-    <p>您的学习的知识和技能将成为他们唯一的依靠</p>
-    <button v-on:click="logOut()">登出</button>
-    <button v-on:click="jumpToPage('PHGuidingPage')">医院导览</button>
-    <button v-on:click="jumpToPage('DutyLearningPage')">职能学习</button>
+      <button v-on:click="logOut()">登出</button>
+      <button v-on:click="jumpToPage('RolePlayPage')">角色扮演</button>
+      <button v-on:click="jumpToPage('CaseLearningPage')">病例学习</button>
+      <button v-on:click="jumpToPage('MainPage')">回到主页</button>
     <PHFooter></PHFooter>
   </div>
 </template>
