@@ -2,6 +2,13 @@ from django.shortcuts import render
 from django.http import HttpResponse
 import json
 
+def restful_demo(request, key):
+    result = key
+    return HttpResponse(json.dumps({
+        "status": "fuck you ",
+        "result": result
+    }))
+
 def json_display_demo(request):
     list = ["json1", "json2", "fuck you"]
     return HttpResponse(json.dumps({
