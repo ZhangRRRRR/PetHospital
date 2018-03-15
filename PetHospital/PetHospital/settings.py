@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'basic_structure',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'users.apps.UsersConfig',
-    'roleLearning.apps.RolelearningConfig'
+    'roleLearning.apps.RolelearningConfig',
+    'caseStudy.apps.CasestudyConfig',
 ]
 
 MIDDLEWARE = [
