@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import ImageViewer from '../components/ImageViewer.vue'
+import ImageViewer from '../../components/ImageViewer.vue'
 export default {
   components: { ImageViewer },
   data () {

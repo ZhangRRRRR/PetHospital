@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import PHHeader from '../components/PHHeader.vue'
-import PHFooter from '../components/PHFooter.vue'
+import PHHeader from '../../components/PHHeader.vue'
+import PHFooter from '../../components/PHFooter.vue'
 export default {
   components: { PHHeader, PHFooter },
   data () {
