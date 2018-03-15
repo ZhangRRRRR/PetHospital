@@ -53,6 +53,9 @@
                 <Icon type="stats-bars"></Icon>
                 用户中心
               </template>
+              <MenuItem name="UserCenter">
+                用户中心
+              </MenuItem>
               <MenuItem name="logout">
                 登出
               </MenuItem>

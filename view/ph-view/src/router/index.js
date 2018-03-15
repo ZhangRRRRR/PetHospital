@@ -11,6 +11,8 @@ import DeseaseSeriesDetail from '@/page/DutyLearning/deseaseSeriesDetail'
 import iMain from '@/page/iMain'
 import WelcomePage from '@/page/WelcomePage'
 import RoleDetail from '@/page/RoleDetail'
+import UserCenter from '@/page/UserCenter/UserCenter'
+import ManageMain from '@/page/ManageCenter/ManageMain'
 Vue.use(Router)
 
 export default new Router({
@@ -69,8 +71,19 @@ export default new Router({
           path: '/role/:id',
           name: 'RoleDetail',
           component: RoleDetail
+        },
+        {
+          path: '/usercenter',
+          name: 'UserCenter',
+          component: UserCenter
         }
       ]
+    },
+    {
+      path: '/managecenter',
+      name: 'ManageMain',
+      component: ManageMain,
+      children: []
     },
     {
       path: '/login',
