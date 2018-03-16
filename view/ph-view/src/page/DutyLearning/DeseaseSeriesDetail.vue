@@ -14,8 +14,8 @@
 </template>
 
 <script>
-import ImageViewer from '../components/ImageViewer.vue'
-import VideoViewer from '../components/VideoViewer.vue'
+import ImageViewer from '../../components/ImageViewer.vue'
+import VideoViewer from '../../components/VideoViewer.vue'
 export default {
   components: { ImageViewer, VideoViewer },
   data () {

@@ -74,7 +74,7 @@ export default {
       if (jumpFromPage) {
         this.jumpToPage(jumpFromPage)
       } else {
-        this.jumpToPage('MainPage')
+        this.jumpToPage('WelcomePage')
       }
     },
     jumpToPage (pageName) {
@@ -85,7 +85,7 @@ export default {
     checkLogin () {
       var isAlreadyLogin = this.$api.checkLoginStatus()
       if (isAlreadyLogin === true) {
-        this.jumpToPage('MainPage')
+        this.jumpToPage('WelcomePage')
       } else {
         // do nothing
       }

@@ -1,6 +1,5 @@
 <template>
   <div>
-    <PHHeader></PHHeader>
       <ul>
         <li v-for="desease in deseasesData.deseases" :key="desease.id">
           <p>{{desease.name}}</p>
@@ -14,15 +13,14 @@
         </li>
       </ul>
       <button v-on:click="logOut()">登出</button>
-      <button v-on:click="jumpToPage('MainPage')">回到主页</button>
+      <button v-on:click="jumpToPage('WelcomePage')">回到主页</button>
       <button v-on:click="jumpToPage('DutyLearningPage')">回到职能学习页面</button>
-    <PHFooter></PHFooter>
   </div>
 </template>
 
 <script>
-import PHHeader from '../components/PHHeader.vue'
-import PHFooter from '../components/PHFooter.vue'
+import PHHeader from '../../components/PHHeader.vue'
+import PHFooter from '../../components/PHFooter.vue'
 export default {
   components: { PHHeader, PHFooter },
   data () {
@@ -82,7 +80,7 @@ export default {
       this.$router.push({
         name: 'LoginPage',
         params: {
-          jumpFromPage: 'MainPage'
+          jumpFromPage: 'WelcomePage'
         }
       })
     },
