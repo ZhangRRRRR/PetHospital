@@ -12,10 +12,14 @@ import DeseaseSeriesDetail from '@/page/DutyLearning/deseaseSeriesDetail'
 import iMain from '@/page/iMain'
 import WelcomePage from '@/page/WelcomePage'
 import RoleDetail from '@/page/RoleDetail'
+
 import OfficialTest from '@/page/OnlineTest/OfficialTest'
 import TestLibrary from '@/page/OnlineTest/TestLibrary'
 import MockTest from '@/page/OnlineTest/MockTest'
 import OnlineTestPage from '@/page/OnlineTestPage'
+
+import UserCenter from '@/page/UserCenter/UserCenter'
+import ManageMain from '@/page/ManageCenter/ManageMain'
 
 Vue.use(Router)
 
@@ -72,6 +76,11 @@ export default new Router({
           component: RoleDetail
         },
         {
+          path: '/usercenter',
+          name: 'UserCenter',
+          component: UserCenter
+        },
+        {
           path: '/onlinetest',
           name: 'OnlineTestPage',
           component: OnlineTestPage,
@@ -91,9 +100,14 @@ export default new Router({
               name: 'MockTest',
               component: MockTest
             }
-          ]
-        }
+          ]}
       ]
+    },
+    {
+      path: '/managecenter',
+      name: 'ManageMain',
+      component: ManageMain,
+      children: []
     },
     {
       path: '/login',
