@@ -24,7 +24,6 @@
             <Button type="ghost" shape="circle" icon="ios-search"></Button>
           </Header>
 
-
           <Content :style="{margin: '88px 20px 0', background: '#fff', minHeight: '500px'}">
             <router-view/>
           </Content>

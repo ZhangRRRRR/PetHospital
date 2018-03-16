@@ -8,9 +8,9 @@
 </template>
 
 <script>
-    export default {
-        name: "mock-test"
-    }
+export default {
+  name: 'mock-test'
+}
 </script>
 
 <style scoped>
