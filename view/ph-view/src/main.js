@@ -14,6 +14,7 @@ import './style/fonts/glyphicons-halflings-regular.woff2'
 import './style/css/bootstrap.css'
 import 'video.js/dist/video-js.css'
 import 'iview/dist/styles/iview.css'
+import './style/my-theme/index.less'
 
 import api from './api/index.js'
 Vue.use(iView)
