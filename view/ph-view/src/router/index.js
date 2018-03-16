@@ -10,7 +10,7 @@ import DutyLearningPage from '@/page/DutyLearning/DutyLearningPage'
 import DeseaseSeriesDetail from '@/page/DutyLearning/deseaseSeriesDetail'
 import iMain from '@/page/iMain'
 import WelcomePage from '@/page/WelcomePage'
-import RoleDetail from '@/page/RoleDetail'
+import RoleDetail from '@/page/DutyLearning/RoleDetail'
 Vue.use(Router)
 
 export default new Router({

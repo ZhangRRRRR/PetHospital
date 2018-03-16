@@ -19,7 +19,7 @@ export default {
     return {
       rolePlaysData: {
         'roles': [
-          {'id': '000001', 'name': 'ROLE1', 'description': 'this is role 1'},
+          {'id': '000001', 'name': '狗狗鸡儿的小天使', 'description': '帮狗狗换尿布'},
           {'id': '000002', 'name': 'ROLE2', 'description': 'this is role 2'},
           {'id': '000003', 'name': 'ROLE3', 'description': 'this is role 3'}
         ]
