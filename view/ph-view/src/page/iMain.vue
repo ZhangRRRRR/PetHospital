@@ -56,6 +56,9 @@
               <MenuItem name="UserCenter">
                 用户中心
               </MenuItem>
+              <MenuItem name="ManageMain">
+                管理中心
+              </MenuItem>
               <MenuItem name="logout">
                 登出
               </MenuItem>
