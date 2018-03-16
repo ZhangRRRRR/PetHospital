@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import MainPage from '@/page/MainPage'
 import LoginPage from '@/page/LoginPage'
+
 import PHGuidingPage from '@/page/Guiding/PHGuidingPage'
 import PHGuidingDetail from '@/page/Guiding/PHGuidingDetail'
 import CaseLearningPage from '@/page/DutyLearning/CaseLearningPage'
@@ -11,13 +12,20 @@ import DeseaseSeriesDetail from '@/page/DutyLearning/deseaseSeriesDetail'
 import iMain from '@/page/iMain'
 import WelcomePage from '@/page/WelcomePage'
 import RoleDetail from '@/page/DutyLearning/RoleDetail'
+import OfficialTest from '@/page/OnlineTest/OfficialTest'
+import TestLibrary from '@/page/OnlineTest/TestLibrary'
+import MockTest from '@/page/OnlineTest/MockTest'
+import OnlineTestPage from '@/page/OnlineTestPage'
+
+import UserCenter from '@/page/UserCenter/UserCenter'
+import ManageMain from '@/page/ManageCenter/ManageMain'
+
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
       path: '/',
-      name: 'iMain',
       component: iMain,
       children: [
         {
@@ -50,11 +58,6 @@ export default new Router({
           component: CaseLearningPage
         },
         {
-          path: '/roleplay',
-          name: 'RolePlayPage',
-          component: RolePlayPage
-        },
-        {
           // 病种
           path: '/deseaseseries/:id',
           name: 'DeseaseSeriesDetail',
@@ -69,13 +72,46 @@ export default new Router({
           path: '/role/:id',
           name: 'RoleDetail',
           component: RoleDetail
-        }
+        },
+        {
+          path: '/usercenter',
+          name: 'UserCenter',
+          component: UserCenter
+        },
+        {
+          path: '/onlinetest',
+          name: 'OnlineTestPage',
+          component: OnlineTestPage,
+          children: [
+            {
+              path: '/officialtest',
+              name: 'OfficialTest',
+              component: OfficialTest
+            },
+            {
+              path: '/testlibrary',
+              name: 'TestLibrary',
+              component: TestLibrary
+            },
+            {
+              path: '/mocktest',
+              name: 'MockTest',
+              component: MockTest
+            }
+          ]}
       ]
+    },
+    {
+      path: '/managecenter',
+      name: 'ManageMain',
+      component: ManageMain,
+      children: []
     },
     {
       path: '/login',
       name: 'LoginPage',
       component: LoginPage
     }
+
   ]
 })

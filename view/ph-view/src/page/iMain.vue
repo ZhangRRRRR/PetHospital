@@ -44,7 +44,7 @@
               <Icon type="ios-keypad"></Icon>
               职能学习
             </MenuItem>
-            <MenuItem name="3">
+            <MenuItem name="OnlineTestPage">
               <Icon type="ios-analytics"></Icon>
               测试
             </MenuItem>
@@ -53,6 +53,9 @@
                 <Icon type="stats-bars"></Icon>
                 用户中心
               </template>
+              <MenuItem name="UserCenter">
+                用户中心
+              </MenuItem>
               <MenuItem name="logout">
                 登出
               </MenuItem>
